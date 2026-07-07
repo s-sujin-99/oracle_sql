@@ -140,7 +140,7 @@ select *
 from employees
 where manager_id is not NULL;
 
--- 12. order by (desx)
+-- 12. order by (desc)
 select *
 from employees
 order by employee_id desc;
