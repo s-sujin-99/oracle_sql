@@ -4,6 +4,14 @@ create table EMP01 (
     name varchar2(20),
     salary number(7,2)
 );
+create table EMP02 (
+    empNo NUMBER(4),
+    name varchar2(20),
+    salary number(7,2),
+--    복합키 주기
+    constraint pk_emp02_no_name primary key(empno, name)
+);
+select * from user_cons_columns where table_name='EMP02';
 
 select * from emp01;
 
