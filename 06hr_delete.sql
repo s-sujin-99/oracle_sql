@@ -75,5 +75,3 @@ insert into books values(104,'python',80,15000,'서울출판사');
 select * from books;
 
 
-
-

@@ -27,9 +27,18 @@ MAXSIZE 20M;
 -- (주의: javaData 테이블스페이스를 기본으로 지정하려면, 사전에 javaData 테이블스페이스가 생성되어 있어야 합니다)
 ALTER SESSION SET "_ORACLE_SCRIPT"=true;
 
-CREATE USER javauser IDENTIFIED BY javauser
+CREATE USER springuser IDENTIFIED BY springuser
 DEFAULT TABLESPACE firstData -- 앞서 만든 firstData를 쓰거나, javaData를 새로 만드셔야 합니다.
 TEMPORARY TABLESPACE temp;
 
 -- 사용자 권한 설정 (테이블 CRUD 기능 및 접속 권한)
-GRANT CONNECT, RESOURCE TO javauser;
+GRANT CONNECT, RESOURCE, dba TO springuser;
+
+-- 시퀀스 설정
+create sequence emp_seq
+start with 0
+increment by 1
+minvalue 0
+maxvalue 1000
+nocycle
+cache 2;
